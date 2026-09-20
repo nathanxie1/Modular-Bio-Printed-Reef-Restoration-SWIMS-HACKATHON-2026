@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import { MarineModule, ModuleStatus } from '../types';
 import { marineAudio } from '../utils/audio';
+import { SharpIslandSilhouette } from './SharpIslandSilhouette';
 
 interface HexMapProps {
   modules: MarineModule[];
@@ -138,76 +139,8 @@ export const HexMap: React.FC<HexMapProps> = ({
             </g>
           )}
 
-          {/* Sharp Island (Kiu Tsui Chau) Landmass */}
-          <g>
-            {/* Outer Reef Flat Zone */}
-            <path
-              d="M 230,80 
-                 C 320,60 410,130 420,220 
-                 C 430,300 450,380 390,470 
-                 C 340,540 230,520 180,440 
-                 C 140,380 160,290 190,210 
-                 Z"
-              fill="#D6E7E0"
-              stroke="#B3CDC2"
-              strokeWidth="1.5"
-              strokeDasharray="4 5"
-              opacity="0.8"
-            />
-
-            {/* Main Sharp Island Body */}
-            <path
-              d="M 260,110 
-                 C 340,90 390,150 400,220 
-                 C 410,290 415,360 370,440 
-                 C 320,500 230,480 200,410 
-                 C 170,350 180,280 210,200 
-                 Z"
-              fill="url(#islandGradient)"
-              stroke="#4E6D3E"
-              strokeWidth="2"
-            />
-
-            {/* Kiu Tsui Tombolo Sandbar */}
-            <path
-              d="M 200,250 
-                 C 150,240 100,230 70,220 
-                 C 65,225 65,230 75,238 
-                 C 110,255 160,265 195,270 
-                 Z"
-              fill="url(#tomboloGradient)"
-              stroke="#B89B6C"
-              strokeWidth="1.5"
-            />
-
-            {/* Kiu Tau Islet */}
-            <ellipse
-              cx="50"
-              cy="215"
-              rx="28"
-              ry="22"
-              fill="url(#islandGradient)"
-              stroke="#4E6D3E"
-              strokeWidth="1.5"
-            />
-
-            {/* Natural Field Labels */}
-            <text x="35" y="180" fill="#3D5A47" fontSize="10" fontWeight="bold" letterSpacing="0.5">
-              KIU TAU ISLET
-            </text>
-            <text x="80" y="275" fill="#8C6328" fontSize="9" fontWeight="600">
-              Tombolo Sandbar (Low Tide)
-            </text>
-            <text x="245" y="315" fill="#FFFFFF" fontSize="13" fontWeight="bold" letterSpacing="1">
-              SHARP ISLAND
-            </text>
-            <text x="250" y="333" fill="#E8F2EC" fontSize="10">
-              Kiu Tsui Chau Core Sanctuary
-            </text>
-            <text x="340" y="175" fill="#244E45" fontSize="9" fontWeight="600">
-              • Pineapple Bun Geosite
-            </text>
-          </g>
+          {/* Sharp Island (Kiu Tsui Chau) Landmass: Exact Natural Silhouette */}
+          <SharpIslandSilhouette />
 
           {/* Gentle Tidal Flow Vector Waves */}
           {sonarActive && (

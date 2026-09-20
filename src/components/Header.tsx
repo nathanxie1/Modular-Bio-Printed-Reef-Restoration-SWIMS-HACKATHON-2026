@@ -5,8 +5,6 @@ import {
   Droplets, 
   Waves, 
   Compass, 
-  Volume2, 
-  VolumeX, 
   Sparkles,
   Pin
 } from 'lucide-react';
@@ -15,8 +13,8 @@ import { marineAudio } from '../utils/audio';
 
 interface HeaderProps {
   telemetry: TelemetrySummary;
-  audioEnabled: boolean;
-  onToggleAudio: () => void;
+  audioEnabled?: boolean;
+  onToggleAudio?: () => void;
   sonarActive: boolean;
   onToggleSonar: () => void;
   activeCount: number;
@@ -132,26 +130,6 @@ export const Header: React.FC<HeaderProps> = ({
           >
             <Sparkles size={13} className={sonarActive ? "text-amber-200" : "text-[#1E5D66]"} />
             <span>Tidal Flow View</span>
-          </button>
-
-          <button
-            id="btn-toggle-audio"
-            onClick={() => {
-              onToggleAudio();
-              if (!audioEnabled) {
-                marineAudio.enabled = true;
-                marineAudio.playSonarPing();
-              }
-            }}
-            title={audioEnabled ? "Mute Chimes" : "Unmute Chimes"}
-            className={`p-2 rounded-xl text-xs transition-all flex items-center gap-1.5 border cursor-pointer ${
-              audioEnabled 
-                ? 'bg-white text-[#1E5D66] border-[#CAD8D2] hover:bg-[#EDF3EF] shadow-xs' 
-                : 'bg-white text-slate-400 border-[#CAD8D2] hover:bg-[#EDF3EF]'
-            }`}
-          >
-            {audioEnabled ? <Volume2 size={15} /> : <VolumeX size={15} />}
-            <span className="hidden sm:inline text-xs font-medium">{audioEnabled ? 'Chimes ON' : 'Muted'}</span>
           </button>
         </div>
       </div>
