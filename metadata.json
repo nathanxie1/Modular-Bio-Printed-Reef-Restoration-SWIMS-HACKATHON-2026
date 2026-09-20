@@ -1,0 +1,6 @@
+{
+  "name": "Sharp Island Marine Project",
+  "description": "Connect people with nature and contribute to biodiversity science at Sharp Island, Hong Kong. Interactive reef restoration tiles, citizen diver logs, and ecological observation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
